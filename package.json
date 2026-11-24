@@ -1,0 +1,25 @@
+{
+  "name": "tikos-wedding-platform",
+  "version": "1.0.0",
+  "description": "YESLY by TIKOS wedding invitations and guest pages",
+  "main": "index.js",
+  "scripts": {
+    "build:carousel": "esbuild site/src/main.jsx --bundle --minify --format=esm --jsx=automatic --loader:.png=dataurl --outfile=site/arc-carousel.js && tailwindcss -i site/src/tailwind.css -o site/arc-carousel.css --minify",
+    "build": "npm run build:carousel",
+    "start": "npm run build && bash scripts/serve-site.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.5"
+  },
+  "private": true
+}
